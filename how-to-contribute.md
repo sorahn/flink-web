@@ -6,7 +6,93 @@ title: "How To Contribute"
 
 Apache Flink is developed by an open and friendly community. Everybody is cordially welcome to join the community and contribute to Apache Flink. There are several ways to interact with the community and to contribute to Flink including asking questions, filing bug reports, proposing new features, joining discussions on the mailing lists, contributing code or documentation, improving the website, or testing release candidates.
 
-{% toc %}
+<br />
+<div class="row">
+  <div class="col-md-4 col-sm-6">
+    <div class="well contribute-card">
+      <h2>
+        <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+        Get Involved
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <ul class="contribute-card-list">
+        <li>Subscribe to our mailing list</li>
+        <li>Watch the <code>[apache-flink]</code> tag on <a href="">Stack Overflow</a></li>
+        <li>File a but report in Flink's JIRA</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <div class="well contribute-card">
+      <h2>
+        <span class="glyphicon glyphicon-console" aria-hidden="true"></span>
+        Contribute Code
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <ul class="contribute-card-list">
+        <li>Bullet Point</li>
+        <li>More things to say</li>
+        <li>This is the 3rd list item</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <div class="well contribute-card">
+      <h2>
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+        Contribute Documentation
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <ul class="contribute-card-list">
+        <li>Bullet Point</li>
+        <li>More things to say</li>
+        <li>This is the 3rd list item</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <div class="well contribute-card">
+      <h2>
+        <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+        Spread The Word
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <ul class="contribute-card-list">
+        <li>Bullet Point</li>
+        <li>More things to say</li>
+        <li>This is the 3rd list item</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <div class="well contribute-card">
+      <h2>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        Guide Other Flink Users
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <ul class="contribute-card-list">
+        <li>Bullet Point</li>
+        <li>More things to say</li>
+        <li>This is the 3rd list item</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-6">
+    <div class="well contribute-card">
+      <h2>
+        <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
+        Contribute To The Flink Website
+      </h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <ul class="contribute-card-list">
+        <li>Bullet Point</li>
+        <li>More things to say</li>
+        <li>This is the 3rd list item</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 ## Ask questions!
 

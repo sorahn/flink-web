@@ -300,3 +300,21 @@ img.illu {margin:40px auto 60px;display:block;}
 }
 
 body>.container>.row:first-child>.col-sm-9{margin-top:20px;}
+
+.contribute-card-list {
+  padding-left: 15px;
+}
+
+/* Tablet Card Height */
+@media screen and (min-width: 768px) {
+  .contribute-card {
+    height: 400px;
+  }
+}
+
+/* Desktop Card Height */
+@media screen and (min-width: 992px) {
+  .contribute-card {
+    height: 360px;
+  }
+}
