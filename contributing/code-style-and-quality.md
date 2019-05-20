@@ -1,9 +1,7 @@
 ---
-title:  "Code Style and Quality Guide"
+title:  "Code Style and Quality Guide (OUTDATED)"
 ---
 
-
-## Code Style and Quality Guide (OUTDATED)
 
 *Note: These guidelines are outdated and will be updated soon.*
 
@@ -54,9 +52,80 @@ title:  "Code Style and Quality Guide"
 
 ## Code style
 
+### License
+- **Apache license headers.** Make sure you have Apache License headers in your files. The RAT plugin is checking for that when you build the code.
+
+### Imports
+- **Empty line before and after package declaration.**
+- **No unused imports.**
+- **No redundant imports.**
+- **No wildcard imports.** They can cause problems when adding to the code and in some cases even during refactoring.
+- **Import order.** Imports must be ordered alphabetically, grouped into the following blocks, with each block separated by an empty line:
+	- &lt;imports from org.apache.flink.*&gt;
+	- &lt;imports from org.apache.flink.shaded.*&gt;
+	- &lt;imports from other libraries&gt;
+	- &lt;imports from javax.*&gt;
+	- &lt;imports from java.*&gt;
+	- &lt;imports from scala.*&gt;
+	- &lt;static imports&gt;
+
+### Naming
+- **Package names must start with a letter, and must not contain upper-case letters or special characters.**
+- **Non-private static final fields must be upper-case, with words being separated by underscores.** (`MY_STATIC_VARIABLE`)
+- **Non-static fields/methods must be in lower camel case.** (`myNonStaticField`)
+
+### Whitespace
+- **Tabs vs. spaces.** We are using tabs for indentation, not spaces. We are not religious there; it just happened to be that we started with tabs, and it is important to not mix them (merge/diff conflicts).
+- **No trailing whitespace.**
+- **Spaces around operators/keywords.** Operators (`+`, `=`, `>`, …) and keywords (`if`, `for`, `catch`, …) must have a space before and after them, provided they are not at the start or end of the line.
+
+### Braces
+- **Left curly braces (`{`) must not be placed on a new line.**
+- **Right curly braces (`}`) must always be placed at the beginning of the line.**
+- **Blocks.** All statements after `if`, `for`, `while`, `do`, … must always be encapsulated in a block with curly braces (even if the block contains one statement).
+
+  ```java
+for (…) {
+ …
+}
+```
+
+	If you are wondering why, recall the famous [*goto bug*](https://www.imperialviolet.org/2014/02/22/applebug.html) in Apple's SSL library.
+
+### Javadocs
+- **All public/protected methods and classes must have a Javadoc.**
+- **The first sentence of the Javadoc must end with a period.**
+- **Paragraphs must be separated with a new line, and started with &lt;p&gt;.**
+
+### Modifiers
+- **No redundant modifiers.** For example, public modifiers in interface methods.
+- **Follow JLS3 modifier order.** Modifiers must be ordered in the following order: public, protected, private, abstract, static, final, transient, volatile, synchronized, native, strictfp.
+
+### Files
+- **All files must end with `\n`.**
+- **File length must not exceed 3000 lines.**
+
+### Misc
+- **Arrays must be defined Java-style.** For example, `public String[] array`.
+- **Use Flink Preconditions.** To increase homogeneity, consistently use the `org.apache.flink.Preconditions` methods `checkNotNull` and `checkArgument` rather than Apache Commons Validate or Google Guava.
+- **No raw generic types.** Do not use raw generic types, unless strictly necessary (sometime necessary for signature matches, arrays).
+- **Suppress warnings.** Add annotations to suppress warnings, if they cannot be avoided (such as "unchecked", or "serial").
+- **Comments.** Add comments to your code. What is it doing? Add Javadocs or inherit them by not adding any comments to the methods. Do not automatically generate comments, and avoid unnecessary comments like:
+
+  ```java
+i++; // increment by one
+```
+
 
 -----
 
 ## Best practices
 
-- Travis: Flink is pre-configured for [Travis CI](http://docs.travis-ci.com/), which can be easily enabled for your personal repository fork (it uses GitHub for authentication, so you do not need an additional account). Simply add the *Travis CI* hook to your repository (*Settings --> Integrations & services --> Add service*) and enable tests for the `flink` repository on [Travis](https://travis-ci.org/profile).
+Please note that some tests in Flink's code base are flaky and can fail by chance. The Flink community is working hard on improving these tests but sometimes this is not possible, e.g., when tests include external dependencies. We maintain all tests that are known to be flaky in Jira and attach the **`test-stability`** label. Please check (and extend) this list of [known flaky tests](https://issues.apache.org/jira/issues/?jql=project%20%3D%20FLINK%20AND%20resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20test-stability%20ORDER%20BY%20priority%20DESC) if you encounter a test failure that seems to be unrelated to your changes.
+
+Please note that we run additional build profiles for different combinations of Java, Scala, and Hadoop versions to validate your contribution. We encourage every contributor to use a *continuous integration* service that will automatically test the code in your repository whenever you push a change.
+
+In addition to the automated tests, please check the diff of your changes and remove all unrelated changes such as unnecessary reformatting.
+
+
+Travis: Flink is pre-configured for [Travis CI](http://docs.travis-ci.com/), which can be easily enabled for your personal repository fork (it uses GitHub for authentication, so you do not need an additional account). Simply add the *Travis CI* hook to your repository (*Settings --> Integrations & services --> Add service*) and enable tests for the `flink` repository on [Travis](https://travis-ci.org/profile).
