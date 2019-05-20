@@ -39,8 +39,7 @@ Apache Flink is maintained, improved, and extended by code contributions of volu
 	<div class="col-sm-3 process-box">
 	  <h2><a href="#review">3. Review</a></h2>
 	  Open a pull request and work with the reviewer. <br /><br />
-	  <b>Pull requests belonging to unassigned Jira tickets will not be reviewed or merged by the community</b> <br />
-	  <a href="{{ site.base }}/reviewing-prs.html">How to review a pull request</a>
+	  <b>Pull requests belonging to unassigned Jira tickets will not be reviewed or merged by the community</b> 
 	</div>
 	<div class="col-sm-3 process-box">
 	  <h2><a href="#merge">4. Merge</a></h2>
@@ -68,7 +67,7 @@ This means agreeing on the scope and implementation approach of a change.
      - The *Title* describes the problem concisely.
      - The *Description* gives all the details needed to understand the problem or feature request.
      - The *Component* field is set: Many committers and contributors only focus on certain subsystems of Flink. Setting the appropriate component is important for getting their attention.
-  - There is **agreement** that the ticket solves a valid problem, and that it is a good **fit** for Flink. 
+  - There is **agreement** that the ticket solves a valid problem, and that it is a **good fit** for Flink. 
     The Flink community considers the following aspects:
      - Does the contribution alter the behavior of features or components in a way that it may break previous users’ programs and setups? If yes, there needs to be a discussion and agreement that this change is desirable.
      - Does the contribution conceptually fit well into Flink? Is it too much of a special case such that it makes things more complicated for the common case, or bloats the abstractions / APIs?
@@ -84,7 +83,7 @@ This means agreeing on the scope and implementation approach of a change.
     - impact on Flink's build time
     - dependencies and their licenses
 
-Large changes might require a [Flink Improvement Proposal (FLIP)](https://cwiki.apache.org/confluence/display/FLINK/Flink+Improvement+Proposals) or a discussion on [dev mailing list]( {{ site.base }}/community.html#mailing-lists ) to reach agreement or consensus.
+Large changes might require a [Flink Improvement Proposal (FLIP)](https://cwiki.apache.org/confluence/display/FLINK/Flink+Improvement+Proposals) or a discussion on the [dev mailing list]( {{ site.base }}/community.html#mailing-lists ) to reach agreement or consensus.
 
 Once all requirements for the ticket are met, a committer will assign somebody to the *`Assignee`* field of the ticket to work on it.
 Only committers have the permission to assign somebody.
@@ -115,6 +114,7 @@ Considerations before opening a pull request:
  - Execute the [End to End tests of Flink](https://github.com/apache/flink/tree/master/flink-end-to-end-tests#running-tests).
  - Make sure no unrelated or unnecessary reformatting changes are included.
  - Make sure your commit history adheres to the requirements.
+ - Make sure your change has been rebased to the latest commits in your base branch.
 
 
 Considerations before or right after opening a pull request:
@@ -130,38 +130,13 @@ Considerations before or right after opening a pull request:
 The code will be merged by a committer of Flink once the review is finished. The Jira ticket will be closed afterwards.
 
 
---- 
 
-
-
-Please note that some tests in Flink's code base are flaky and can fail by chance. The Flink community is working hard on improving these tests but sometimes this is not possible, e.g., when tests include external dependencies. We maintain all tests that are known to be flaky in Jira and attach the **`test-stability`** label. Please check (and extend) this list of [known flaky tests](https://issues.apache.org/jira/issues/?jql=project%20%3D%20FLINK%20AND%20resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20test-stability%20ORDER%20BY%20priority%20DESC) if you encounter a test failure that seems to be unrelated to your changes.
-
-Please note that we run additional build profiles for different combinations of Java, Scala, and Hadoop versions to validate your contribution. We encourage every contributor to use a *continuous integration* service that will automatically test the code in your repository whenever you push a change. The [Best practices]( {{site.base}}/contribute-code.html#best-practices ) guide shows how to integrate [Travis](https://travis-ci.org/) with your GitHub repository.
-
-In addition to the automated tests, please check the diff of your changes and remove all unrelated changes such as unnecessary reformatting.
-
-
-
-
-### Preparing and submitting your contribution
-
-To make the changes easily mergeable, please rebase them to the latest version of the main repository's master branch. Please also respect the [commit message guidelines]( {{ site.base }}/contribute-code.html#coding-guidelines ), clean up your commit history, and squash your commits to an appropriate set. Please verify your contribution one more time after rebasing and commit squashing as described above.
-
-The Flink project accepts code contributions through the [GitHub Mirror](https://github.com/apache/flink), in the form of [Pull Requests](https://help.github.com/articles/using-pull-requests). Pull requests are a simple way to offer a patch, by providing a pointer to a code branch that contains the change.
-
-To open a pull request, push your contribution back into your fork of the Flink repository.
-
-```
-git push origin myBranch
-```
-
-Go to the website of your repository fork (`https://github.com/<your-user-name>/flink`) and use the *"Create Pull Request"* button to start creating a pull request. Make sure that the base fork is `apache/flink master` and the head fork selects the branch with your changes. Give the pull request a meaningful description and send it.
-
-It is also possible to attach a patch to a [Jira]({{site.FLINK_ISSUES_URL}}) issue.
 
 -----
 
-## Coding guidelines
+## Coding guidelines (OUTDATED)
+
+*Note: These guidelines are outdated and will be updated soon.*
 
 ### Pull requests and commit message
 {:.no_toc}
@@ -218,6 +193,18 @@ It is also possible to attach a patch to a [Jira]({{site.FLINK_ISSUES_URL}}) iss
 - Travis: Flink is pre-configured for [Travis CI](http://docs.travis-ci.com/), which can be easily enabled for your personal repository fork (it uses GitHub for authentication, so you do not need an additional account). Simply add the *Travis CI* hook to your repository (*Settings --> Integrations & services --> Add service*) and enable tests for the `flink` repository on [Travis](https://travis-ci.org/profile).
 
 -----
+
+--- 
+
+
+
+Please note that some tests in Flink's code base are flaky and can fail by chance. The Flink community is working hard on improving these tests but sometimes this is not possible, e.g., when tests include external dependencies. We maintain all tests that are known to be flaky in Jira and attach the **`test-stability`** label. Please check (and extend) this list of [known flaky tests](https://issues.apache.org/jira/issues/?jql=project%20%3D%20FLINK%20AND%20resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20test-stability%20ORDER%20BY%20priority%20DESC) if you encounter a test failure that seems to be unrelated to your changes.
+
+Please note that we run additional build profiles for different combinations of Java, Scala, and Hadoop versions to validate your contribution. We encourage every contributor to use a *continuous integration* service that will automatically test the code in your repository whenever you push a change. The [Best practices]( {{site.base}}/contribute-code.html#best-practices ) guide shows how to integrate [Travis](https://travis-ci.org/) with your GitHub repository.
+
+In addition to the automated tests, please check the diff of your changes and remove all unrelated changes such as unnecessary reformatting.
+
+
 
 ## Setup a development environment
 

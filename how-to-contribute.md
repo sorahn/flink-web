@@ -20,15 +20,15 @@ Apache Flink is developed by an open and friendly community. Everybody is cordia
   </thead>
   <tbody>
     <tr>
-      <td><h2><span class="glyphicon glyphicon-console" aria-hidden="true"></span> Contribute Code</h2></td>
+      <td><span class="glyphicon glyphicon-console" aria-hidden="true"></span> Contribute Code</td>
       <td>Read the <a href="{{ site.baseurl }}/contribute-code.html">Code Contribution Guide</a></td>
     </tr>
     <tr>
-      <td><h2><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Help With Code Reviews</h2></td>
+      <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Help With Code Reviews</td>
       <td>Read the <a href="{{ site.baseurl }}/reviewing-prs.html">Code Review Guide</a></td>
     </tr>
     <tr>
-      <td><h2><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Review a Release Candidate</h2></td>
+      <td><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Review a Release Candidate</td>
       <td>
         Releasing a new version consists of the following steps:
         <ol>
@@ -40,11 +40,11 @@ Apache Flink is developed by an open and friendly community. Everybody is cordia
       </td>
     </tr>
     <tr>
-      <td><h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Contribute Documentation</h2></td>
+      <td><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Contribute Documentation</td>
       <td>Read the <a href="{{ site.baseurl }}/contribute-documentation.html">Documentation Contribution Guide</a></td>
     </tr>
     <tr>
-      <td><h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Support Flink Users</h2></td>
+      <td><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Support Flink Users</td>
       <td>
         <ul class="contribute-card-list">
           <li>Reply to questions on the <a href="https://flink.apache.org/community.html#mailing-lists">user mailing list</a></li>
@@ -54,11 +54,11 @@ Apache Flink is developed by an open and friendly community. Everybody is cordia
       </td>
     </tr>
     <tr>
-      <td><h2><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Contribute To The Website</h2></td>
+      <td><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Contribute To The Website</td>
       <td>Read the <a href="{{ site.baseurl }}/improve-website.html">Website Contribution Guide</a></td>
     </tr>
     <tr>
-      <td><h2><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span> Contribute Evangelism</h2></td>
+      <td><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span> Contribute Evangelism</td>
       <td>
         <ul class="contribute-card-list">
         <li>Organize or attend a <a href="https://www.meetup.com/topics/apache-flink/">Flink Meetup</a></li>
